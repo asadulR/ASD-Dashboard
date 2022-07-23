@@ -3,7 +3,6 @@ import React from 'react';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
-
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
@@ -12,7 +11,7 @@ import Ecommerce from './pages/Ecommerce';
 import { Area, Bar, Calendar, ColorMapping, ColorPicker, Customers, Editor, Employees, Financial, Kanban, Line, Orders, Pie, Pyramid, Stacked } from './pages';
 
 const App = () => {
-    const activeMenu = false;
+    const activeMenu = true;
     return (
         <div>
             <BrowserRouter>
