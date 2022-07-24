@@ -25,9 +25,9 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
         >
             <span style={{ background: dotColor }}
                 className=" absolute inline-flex rounded-full h-2 w-2 right-2 top-2"
-            >
-                {icon}
-            </span>
+            />
+            {icon}
+
         </button>
     </TooltipComponent>
 )
@@ -35,7 +35,7 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
 const Navbar = () => {
     const { activeMenu, setActiveMenu, isClicked, setClicked, handleClick, screenSize, setScreenSize } = useStateContext();
 
-    useEffect( () => {
+    useEffect(() => {
         const handleResize = () => setScreenSize(window.innerWidth);
 
         window.addEventListener('resize', handleResize)
@@ -45,13 +45,13 @@ const Navbar = () => {
 
     }, [setScreenSize]);
 
-    useEffect( () => {
-        if(screenSize <= 900) {
+    useEffect(() => {
+        if (screenSize <= 900) {
             setActiveMenu(false);
-        }else{
+        } else {
             setActiveMenu(true);
         }
-    },[screenSize, setActiveMenu]);
+    }, [screenSize, setActiveMenu]);
 
     return (
         <div className='flex justify-between p-2 md:mx-6 relative'>
@@ -87,7 +87,7 @@ const Navbar = () => {
                             <span className=' text-gray-400 text-14'>Hi, </span> {' '}
                             <span className='text-gray-400 font-bold ml-1 text-14'>Asadul</span>
                         </p>
-                        <MdKeyboardArrowDown className=' text-gray-400 text-14'/>
+                        <MdKeyboardArrowDown className=' text-gray-400 text-14' />
                     </div>
                 </TooltipComponent>
                 {isClicked.cart && <Cart />}
