@@ -8,7 +8,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
 import Ecommerce from './pages/Ecommerce';
-import { Area, Bar, Calendar, ColorMapping, ColorPicker, Customers, Editor, Employees, Financial, Kanban, Line, Orders, Pie, Pyramid, Stacked } from './pages';
+import { Area, Bar, Calendar, ColorMapping, ColorPicker, Customers, Editor, Employees, Financial, Line, Orders, Pie, Pyramid, Stacked } from './pages';
 
 import { useStateContext } from './contexts/ContextProvider';
 const App = () => {
@@ -56,7 +56,6 @@ const App = () => {
                                 <Route path='/customers' element={<Customers />} />
 
                                 {/* Apps */}
-                                <Route path='/kanban' element={<Kanban />} />
                                 <Route path='/editor' element={<Editor />} />
                                 <Route path='/calendar' element={<Calendar />} />
                                 <Route path='/color-picker' element={<ColorPicker />} />
