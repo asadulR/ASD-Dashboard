@@ -11,8 +11,9 @@ import Ecommerce from './pages/Ecommerce';
 import { Area, Bar, Calendar, ColorMapping, ColorPicker, Customers, Editor, Employees, Financial, Line, Orders, Pie, Pyramid, Stacked } from './pages';
 
 import { useStateContext } from './contexts/ContextProvider';
+import { ThemeSettings } from './components';
 const App = () => {
-    const { activeMenu } = useStateContext();
+    const { activeMenu, themeSettings, setThemeSettings, currentColor } = useStateContext();
 
     return (
         <div>
@@ -21,7 +22,8 @@ const App = () => {
                     <div className='fixed right-4 bottom-4' style={{ zIndex: '1000' }}>
                         <TooltipComponent content='Settings' position='Top'>
                             <button type='button' className='text-3xl p-2 hover:drop-shadow-xl hover:bg-light-gray text-white'
-                                style={{ background: 'blue', borderRadius: "50%" }}
+                                style={{ background: currentColor, borderRadius: "50%" }}
+                                onClick={() => setThemeSettings(true)}
                             >
                                 <FiSettings />
                             </button>
@@ -45,7 +47,10 @@ const App = () => {
                         </div>
                         {/* Main div for routing */}
                         <div>
+                            {themeSettings && <ThemeSettings />}
+
                             <Routes>
+
                                 {/* Dashboard */}
                                 <Route path='/' element={<Ecommerce />} />
                                 <Route path='/ecommerce' element={<Ecommerce />} />
